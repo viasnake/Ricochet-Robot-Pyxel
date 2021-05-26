@@ -63,8 +63,8 @@ class Main:
         )
 
         pyxel.circ(
-            self.x + 8 / 2,
-            self.y + 8 / 2,
+            self.x + 3.5,
+            self.y + 3.5,
             2,
             self.color
         )
