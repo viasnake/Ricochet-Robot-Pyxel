@@ -1,9 +1,10 @@
 import pyxel
+import random
 
-class Player:
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+#class Player:
+#    def __init__(self):
+#        self.x = 0
+#        self.y = 0
 
 class Main:
     def __init__(self):
@@ -20,31 +21,34 @@ class Main:
             False
         )
 
-        self.player = Player()
+        self.gen()
+
+#        self.player = Player()
 
         pyxel.run(self.update, self.draw)
 
     def update(self):
-        x = self.player.x
-        y = self.player.y
-
-        if pyxel.btn(pyxel.KEY_W):
-            y = y - 8
-        elif pyxel.btn(pyxel.KEY_S):
-            y = y + 8
-        elif pyxel.btn(pyxel.KEY_A):
-            x = x - 8
-        elif pyxel.btn(pyxel.KEY_D):
-            x = x + 8
-
-        self.player.x = x
-        self.player.y = y
-        print(self.player.x, self.player.y)
+#        x = self.player.x
+#        y = self.player.y
+#
+#        if pyxel.btn(pyxel.KEY_W):
+#            y = y - 8
+#        elif pyxel.btn(pyxel.KEY_S):
+#            y = y + 8
+#        elif pyxel.btn(pyxel.KEY_A):
+#            x = x - 8
+#        elif pyxel.btn(pyxel.KEY_D):
+#            x = x + 8
+#
+#        self.player.x = x
+#        self.player.y = y
+#        print(self.player.x, self.player.y)
+        print("update")
 
 
     def draw(self):
-        x = self.player.x
-        y = self.player.y
+#        x = self.player.x
+#        y = self.player.y
 
         pyxel.cls(0)
         pyxel.bltm(
@@ -56,12 +60,30 @@ class Main:
             16,
             16
         )
+
         pyxel.circ(
-            x + 8/2,
-            y + 8/2,
+            self.x + 8 / 2,
+            self.y + 8 / 2,
             2,
-            8
+            self.color
         )
+#        pyxel.circ(
+#            x + 8/2,
+#            y + 8/2,
+#            2,
+#            8
+#        )
+
+    def gen(self):
+        self.color = random.choice((
+            '3', # Green
+            '5', # Blue
+            '8', # Red
+            '10' # Yellow
+        ))
+        self.x = random.randint(0, 15) * 8
+        self.y = random.randint(0, 15) * 8
+        print(self.color, self.x, self.y)
 
 if __name__ == '__main__':
     Main()
