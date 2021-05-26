@@ -70,13 +70,13 @@ class Main:
             self.x,
             self.y,
             0,
-            0,
+            self.u,
             8*2,
             16,
             16,
             0
         )
-        
+
 #        pyxel.circ(
 #            x + 8/2,
 #            y + 8/2,
@@ -85,15 +85,15 @@ class Main:
 #        )
 
     def gen(self):
-        self.color = random.choice((
-            '3', # Green
-            '5', # Blue
-            '8', # Red
-            '10' # Yellow
+        self.u = random.choice((
+            '0', # Green
+            '16', # Blue
+            '32', # Red
+            '48' # Yellow
         ))
         self.x = random.randint(0, 16) * 16
         self.y = random.randint(0, 16) * 16
-        print(self.color, self.x, self.y)
+        print(self.u, self.x, self.y)
 
 if __name__ == '__main__':
     Main()
