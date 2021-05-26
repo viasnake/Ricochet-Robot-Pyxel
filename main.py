@@ -113,6 +113,15 @@ class Main:
             0
         )
 
+        # rectb(x, y, w, h, col)
+        pyxel.rectb(
+            0,
+            0,
+            16*16,
+            16*16,
+            5
+        )
+
 #        pyxel.circ(
 #            x + 8/2,
 #            y + 8/2,
