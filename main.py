@@ -19,18 +19,33 @@ class Main:
             False,
             False
         )
+
+        self.player = Player()
+
         pyxel.run(self.update, self.draw)
 
     def update(self):
+        x = self.player.x
+        y = self.player.y
+
         if pyxel.btn(pyxel.KEY_W):
-            pyxel.circ(
-                12,
-                12,
-                2,
-                8
-            )
+            y = y - 8
+        elif pyxel.btn(pyxel.KEY_S):
+            y = y + 8
+        elif pyxel.btn(pyxel.KEY_A):
+            x = x - 8
+        elif pyxel.btn(pyxel.KEY_D):
+            x = x + 8
+
+        self.player.x = x
+        self.player.y = y
+        print(self.player.x, self.player.y)
+
 
     def draw(self):
+        x = self.player.x
+        y = self.player.y
+
         pyxel.cls(0)
         pyxel.bltm(
             0,
@@ -42,8 +57,8 @@ class Main:
             16
         )
         pyxel.circ(
-            12,
-            12,
+            x + 8/2,
+            y + 8/2,
             2,
             8
         )
