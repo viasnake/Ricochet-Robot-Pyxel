@@ -43,7 +43,8 @@ class Main:
 #        self.player.x = x
 #        self.player.y = y
 #        print(self.player.x, self.player.y)
-        print("update")
+        if pyxel.btn(pyxel.KEY_R):
+            self.gen()
 
 
     def draw(self):
