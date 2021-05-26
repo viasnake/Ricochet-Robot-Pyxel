@@ -51,7 +51,7 @@ class Main:
 #        x = self.player.x
 #        y = self.player.y
 
-        pyxel.cls(0)
+        pyxel.cls(13)
         pyxel.bltm(
             0,
             0,
@@ -59,7 +59,8 @@ class Main:
             0,
             0,
             16,
-            16
+            16,
+            0
         )
 
         pyxel.circ(
