@@ -91,8 +91,8 @@ class Main:
             '32', # Red
             '48' # Yellow
         ))
-        self.x = random.randint(0, 16) * 16
-        self.y = random.randint(0, 16) * 16
+        self.x = random.randint(0, 15) * 16
+        self.y = random.randint(0, 15) * 16
         print(self.u, self.x, self.y)
 
 if __name__ == '__main__':
