@@ -52,17 +52,20 @@ class Main:
 #        y = self.player.y
 
         pyxel.cls(13)
+
+        # bltm(x, y, tm, u, v, w, h, [colkey])
         pyxel.bltm(
-            0, # x
-            0, # y
-            0, # tm
-            0, # u
-            0, # v
-            32, # w
-            32, # h
-            0 # colkey
+            0,
+            0,
+            0,
+            0,
+            0,
+            32,
+            32,
+            0
         )
 
+        # blt(x, y, img, u, v, w, h, [colkey])
         pyxel.blt(
             self.x,
             self.y,
@@ -73,6 +76,7 @@ class Main:
             16,
             0
         )
+        
 #        pyxel.circ(
 #            x + 8/2,
 #            y + 8/2,
