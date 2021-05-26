@@ -9,12 +9,12 @@ import random
 class Main:
     def __init__(self):
         pyxel.init(
-            128, 128,
+            256, 256,
             caption="Master Robot",
             fps=60
         )
         pyxel.load(
-            'assets/tilemap.pyxres',
+            'assets/tilemap_v2.pyxres',
             True,
             True,
             False,
@@ -53,21 +53,25 @@ class Main:
 
         pyxel.cls(13)
         pyxel.bltm(
+            0, # x
+            0, # y
+            0, # tm
+            0, # u
+            0, # v
+            32, # w
+            32, # h
+            0 # colkey
+        )
+
+        pyxel.blt(
+            self.x,
+            self.y,
             0,
             0,
-            0,
-            0,
-            0,
+            8*2,
             16,
             16,
             0
-        )
-
-        pyxel.circ(
-            self.x + 3.5,
-            self.y + 3.5,
-            2,
-            self.color
         )
 #        pyxel.circ(
 #            x + 8/2,
@@ -83,8 +87,8 @@ class Main:
             '8', # Red
             '10' # Yellow
         ))
-        self.x = random.randint(0, 15) * 8
-        self.y = random.randint(0, 15) * 8
+        self.x = random.randint(0, 16) * 16
+        self.y = random.randint(0, 16) * 16
         print(self.color, self.x, self.y)
 
 if __name__ == '__main__':
