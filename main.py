@@ -60,8 +60,44 @@ class Main:
             0,
             0,
             0,
+            16,
+            16,
+            0
+        )
+
+        # bltm(x, y, tm, u, v, w, h, [colkey])
+        pyxel.bltm(
+            16*8,
+            0,
+            0,
+            0,
+            48,
+            16,
+            16,
+            0
+        )
+
+        # bltm(x, y, tm, u, v, w, h, [colkey])
+        pyxel.bltm(
+            0,
+            16*8,
+            0,
+            0,
+            16,
+            16,
+            16,
+            0
+        )
+
+        # bltm(x, y, tm, u, v, w, h, [colkey])
+        pyxel.bltm(
+            16*8,
+            16*8,
+            0,
+            0,
             32,
-            32,
+            16,
+            16,
             0
         )
 
