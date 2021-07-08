@@ -6,6 +6,21 @@ import random
 #        self.x = 0
 #        self.y = 0
 
+class Generator:
+
+    def player(self):
+        u = random.choice((
+            '0', # Green
+            '16', # Blue
+            '32', # Red
+            '48' # Yellow
+        ))
+        x = random.randint(0, 15) * 16
+        y = random.randint(0, 15) * 16
+        print(u, x, y)
+        return(u, x, y)
+
+#    def goal(self):
 class Main:
     def __init__(self):
         pyxel.init(
@@ -21,13 +36,13 @@ class Main:
             False
         )
 
-        self.generate_player()
+        self.player = generate.player()
 
         pyxel.run(self.update, self.draw)
 
     def update(self):
         if pyxel.btn(pyxel.KEY_R):
-            self.gen()
+            self.player = generate.player()
 
 
     def draw(self):
@@ -83,10 +98,10 @@ class Main:
 
         # blt(x, y, img, u, v, w, h, [colkey])
         pyxel.blt(
-            self.x,
-            self.y,
+            self.player[1],
+            self.player[2],
             0,
-            self.u,
+            self.player[0],
             8*2,
             16,
             16,
@@ -102,16 +117,5 @@ class Main:
             5
         )
 
-    def generate_player(self):
-        self.u = random.choice((
-            '0', # Green
-            '16', # Blue
-            '32', # Red
-            '48' # Yellow
-        ))
-        self.x = random.randint(0, 15) * 16
-        self.y = random.randint(0, 15) * 16
-        print(self.u, self.x, self.y)
-
-if __name__ == '__main__':
-    Main()
+generate = Generator()    
+Main()
