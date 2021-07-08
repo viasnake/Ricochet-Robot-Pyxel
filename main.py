@@ -21,7 +21,7 @@ class Main:
             False
         )
 
-        self.gen()
+        self.generate_player()
 
         pyxel.run(self.update, self.draw)
 
@@ -102,7 +102,7 @@ class Main:
             5
         )
 
-    def gen(self):
+    def generate_player(self):
         self.u = random.choice((
             '0', # Green
             '16', # Blue
