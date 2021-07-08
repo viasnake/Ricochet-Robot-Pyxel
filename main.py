@@ -23,34 +23,14 @@ class Main:
 
         self.gen()
 
-#        self.player = Player()
-
         pyxel.run(self.update, self.draw)
 
     def update(self):
-#        x = self.player.x
-#        y = self.player.y
-#
-#        if pyxel.btn(pyxel.KEY_W):
-#            y = y - 8
-#        elif pyxel.btn(pyxel.KEY_S):
-#            y = y + 8
-#        elif pyxel.btn(pyxel.KEY_A):
-#            x = x - 8
-#        elif pyxel.btn(pyxel.KEY_D):
-#            x = x + 8
-#
-#        self.player.x = x
-#        self.player.y = y
-#        print(self.player.x, self.player.y)
         if pyxel.btn(pyxel.KEY_R):
             self.gen()
 
 
     def draw(self):
-#        x = self.player.x
-#        y = self.player.y
-
         pyxel.cls(13)
 
         # bltm(x, y, tm, u, v, w, h, [colkey])
@@ -121,13 +101,6 @@ class Main:
             16*16,
             5
         )
-
-#        pyxel.circ(
-#            x + 8/2,
-#            y + 8/2,
-#            2,
-#            8
-#        )
 
     def gen(self):
         self.u = random.choice((
