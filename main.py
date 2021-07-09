@@ -1,26 +1,41 @@
 import pyxel
 import random
 
-#class Player:
-#    def __init__(self):
-#        self.x = 0
-#        self.y = 0
-
 class Generator:
 
     def player(self):
         u = random.choice((
-            '0', # Green
-            '16', # Blue
-            '32', # Red
-            '48' # Yellow
+            0, # Green
+            16, # Blue
+            32, # Red
+            48 # Yellow
         ))
         x = random.randint(0, 15) * 16
         y = random.randint(0, 15) * 16
         print(u, x, y)
         return(u, x, y)
 
-#    def goal(self):
+    def goal(self):
+        array = [
+            [1, 6],
+            [2, 1],
+            [2, 10],
+            [4, 5],
+            [4, 13],
+            [5, 8],
+            [6, 3],
+            [6, 14],
+            [9, 12],
+            [10, 2],
+            [10, 7],
+            [11, 14],
+            [12, 9],
+            [13, 1],
+            [14, 6],
+            [14, 13],
+        ]
+        return random.choice(array)
+
 class Main:
     def __init__(self):
         pyxel.init(
@@ -37,13 +52,14 @@ class Main:
         )
 
         self.player = generate.player()
+        self.goal = generate.goal()
 
         pyxel.run(self.update, self.draw)
 
     def update(self):
         if pyxel.btn(pyxel.KEY_R):
             self.player = generate.player()
-
+            self.goal = generate.goal()
 
     def draw(self):
         pyxel.cls(13)
@@ -105,6 +121,14 @@ class Main:
             8*2,
             16,
             16,
+            0
+        )
+
+        # circb(x, y, r, col)
+        pyxel.circb(
+            16*self.goal[0]+8,
+            16*self.goal[1]+8,
+            7,
             0
         )
 
