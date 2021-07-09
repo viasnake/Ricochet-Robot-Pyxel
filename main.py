@@ -41,8 +41,8 @@ class Main:
     def __init__(self):
         pyxel.init(
             256, 256,
-            caption="Master Robot",
-            fps=60
+            caption="Ricochet Robot",
+            fps=30
         )
         pyxel.load(
             'assets/tilemap_v2.pyxres',
@@ -142,4 +142,5 @@ class Main:
             5
         )
   
+generate = Generator()
 Main()
