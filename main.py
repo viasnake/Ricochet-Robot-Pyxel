@@ -4,12 +4,13 @@ import random
 class Generator:
 
     def player(self):
-        u = random.choice((
+        array = [
             0, # Green
             16, # Blue
             32, # Red
             48 # Yellow
-        ))
+        ]
+        u = random.choice(array)
         x = random.randint(0, 15) * 16
         y = random.randint(0, 15) * 16
         print(u, x, y)
@@ -140,6 +141,5 @@ class Main:
             16*16,
             5
         )
-
-generate = Generator()    
+  
 Main()
